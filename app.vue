@@ -1,3 +1,7 @@
+<script setup lang="ts"></script>
+
 <template>
-  <div>테스트입니다.</div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
