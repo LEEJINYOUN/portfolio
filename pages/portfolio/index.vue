@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: "menubar",
+  layout: "navbar",
 });
 </script>
 <template>
