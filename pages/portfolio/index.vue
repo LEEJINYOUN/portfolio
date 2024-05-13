@@ -1,7 +1,20 @@
 <script setup lang="ts">
+import { LazyMoreCard } from "#components";
+import { useModal } from "vue-final-modal";
+import type { PortfolioModel } from "~/model/portfolio";
 definePageMeta({
   layout: "navbar",
 });
+
+const moreModal = (item: PortfolioModel) => {
+  const { open, close } = useModal({
+    component: LazyMoreCard,
+    attrs: {
+      portfolio: item,
+    },
+  });
+  open();
+};
 
 const portfolioList = [
   {
@@ -113,7 +126,9 @@ const portfolioList = [
               <h4>{{ item.title }}</h4>
               <p>{{ item.category }}</p>
               <p>{{ item.date }}</p>
-              <UButton color="black" variant="solid">자세히</UButton>
+              <UButton color="black" variant="solid" @click="moreModal(item)"
+                >자세히</UButton
+              >
             </div>
           </div>
         </div>

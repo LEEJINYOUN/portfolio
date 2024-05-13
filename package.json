@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@nuxt/ui": "^2.16.0",
+    "@vue-final-modal/nuxt": "^1.0.3",
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",
+    "vue-final-modal": "^4.5.4",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {

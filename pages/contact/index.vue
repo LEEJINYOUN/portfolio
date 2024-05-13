@@ -24,5 +24,5 @@ definePageMeta({
       </div>
     </div>
   </section>
-  <Footer />
+  <LazyFooter />
 </template>
