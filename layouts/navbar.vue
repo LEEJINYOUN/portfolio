@@ -27,7 +27,7 @@ const closeToggle = () => {
 </script>
 
 <template>
-  <div id="header" class="header">
+  <div class="header">
     <div class="container">
       <NuxtLink to="/" class="logo"> jin young </NuxtLink>
       <ul class="menu" :class="isToggle == true ? 'active' : ''">

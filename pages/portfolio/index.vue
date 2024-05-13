@@ -28,7 +28,7 @@ const portfolioList = [
     work: "기획, 디자인, 사용자 인터페이스 구성 및 개발",
     des: ["포트폴리오 용도로 제작한 사이트"],
     url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.jpg",
-    github: "-",
+    github: "https://github.com/LEEJINYOUN/portfolio",
     page: "-",
   },
   {
@@ -48,7 +48,7 @@ const portfolioList = [
       "아직 오픈한 지 얼마 되지 않아서 불안정함",
       "안정화될때까지 1~2개월 소요 예상",
     ],
-    url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.jpg",
+    url: "https://swlsdud1005.sirv.com/portfolio/image/inspecter.png",
     github: "-",
     page: "https://www.inspecter.io/",
   },
@@ -66,7 +66,7 @@ const portfolioList = [
       "다국어 지원 예정",
       "협력회사의 내부 사정으로 인하여 무기한 진행중단",
     ],
-    url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.jpg",
+    url: "https://swlsdud1005.sirv.com/portfolio/image/doeunha.png",
     github: "-",
     page: "-",
   },
@@ -80,9 +80,9 @@ const portfolioList = [
     develop: "github",
     work: "기획, 디자인, 사용자 인터페이스 구성 및 개발",
     des: ["단어를 등록해서 나만의 단어장 만들기", "즐겨찾기 기능", "퀴즈 기능"],
-    url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.jpg",
-    github: "-",
-    page: "-",
+    url: "https://swlsdud1005.sirv.com/portfolio/image/wordbook.gif",
+    github: "https://github.com/LEEJINYOUN/WordBook_React-tsx-",
+    page: "https://leejinyoun.github.io/WordBook_React-tsx-/",
   },
   {
     title: "날씨 사이트",
@@ -94,14 +94,14 @@ const portfolioList = [
     develop: "github",
     work: "기획, 디자인, 사용자 인터페이스 구성 및 개발",
     des: ["검색한 지역의 현재 날씨 확인", "기온별로 옷 추천", "날씨 API 활용"],
-    url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.jpg",
-    github: "-",
-    page: "-",
+    url: "https://swlsdud1005.sirv.com/portfolio/image/weather.gif",
+    github: "https://github.com/LEEJINYOUN/WeatherApp-js-",
+    page: "https://leejinyoun.github.io/WeatherApp-js-/",
   },
 ];
 </script>
 <template>
-  <section class="portfolio section" id="portfolio">
+  <section class="portfolio section">
     <h2 class="section_title">- Portfolio -</h2>
     <div class="portfolio_container container">
       <ul class="portfolio_filters">
@@ -125,7 +125,11 @@ const portfolioList = [
             <div class="portfolio_info">
               <h4>{{ item.title }}</h4>
               <p>{{ item.category }}</p>
-              <p>{{ item.date }}</p>
+              <div v-if="item.page != '-'" class="portfolio_links">
+                <a :href="item.page" target="_blank">
+                  <UIcon name="i-heroicons-link" class="link_icon"
+                /></a>
+              </div>
               <UButton color="black" variant="solid" @click="moreModal(item)"
                 >자세히</UButton
               >

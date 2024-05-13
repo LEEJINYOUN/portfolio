@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <section class="home" id="home">
+  <section class="home">
     <div class="home_container">
       <div class="home_content">
         <h1>안녕하세요, <span></span></h1>

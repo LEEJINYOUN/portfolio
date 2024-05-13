@@ -44,7 +44,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <section class="contact section" id="contact">
+  <section class="contact section">
     <h2 class="section_title">- Contact me -</h2>
     <div class="contact_container container">
       <div class="contact_content">

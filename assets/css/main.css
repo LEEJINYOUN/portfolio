@@ -103,6 +103,7 @@ ul {
   width: 100%;
   padding: 20px 0;
   z-index: 1000;
+  background-color: white;
 }
 
 .header.active {
@@ -144,6 +145,7 @@ ul {
   transition: 0.4s;
   color: #333;
   font-weight: 500;
+  font-size: larger;
 }
 
 .menu_link::before {
@@ -230,7 +232,6 @@ ul {
 }
 
 .home {
-  /* padding-top: 114px; */
   position: relative;
 }
 
@@ -614,13 +615,14 @@ ul {
   font-weight: 400;
 }
 
-.portfolio_links a {
-  margin: 0 7px;
+.portfolio_links .link_icon {
   font-size: 10px;
+  width: 35px;
+  height: 35px;
   color: #333;
 }
 
-.portfolio_links a:hover {
+.portfolio_links .link_icon:hover {
   color: var(--main-color);
 }
 

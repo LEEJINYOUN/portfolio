@@ -80,12 +80,12 @@ const skillList = [
 ];
 </script>
 <template>
-  <section class="resume section" id="resume">
+  <section class="resume section">
     <h2 class="section_title">- resume -</h2>
     <div class="resume_container container grid">
       <div class="resume_tabs"></div>
       <div class="resume_content">
-        <div id="page-1" class="page one">
+        <div class="page one">
           <div class="page_heading">TimeLine</div>
           <div
             v-for="(item, key) in timeLineList"
@@ -99,7 +99,7 @@ const skillList = [
             </div>
           </div>
         </div>
-        <div id="page-2" class="page two">
+        <div class="page two">
           <div class="page_heading">Skills</div>
           <div class="progressBoxs grid">
             <div
