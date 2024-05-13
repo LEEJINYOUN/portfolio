@@ -10,8 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@nuxt/ui": "^2.16.0",
     "@vue-final-modal/nuxt": "^1.0.3",
+    "emailjs-com": "^3.2.0",
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",
     "vue-final-modal": "^4.5.4",
