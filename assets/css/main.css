@@ -626,9 +626,148 @@ ul {
   color: var(--main-color);
 }
 
+.portfolio_detail_bg {
+  background-color: white;
+  border-radius: 10px;
+  width: 60%;
+  height: 50%;
+  display: flex;
+}
+
+.portfolio_detail_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+.portfolio_detail_image img {
+  width: 90%;
+  height: 70%;
+}
+
+.portfolio_detail_text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-top: 5px;
+  width: 60%;
+  height: 100%;
+}
+
+.detail_text_box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  width: 100%;
+  height: 70%;
+  overflow-y: auto;
+}
+
+.detail_text_name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  font-size: 15px;
+}
+
+.text_title {
+  padding: 5px 0;
+  font-weight: 700;
+}
+
+.detail_text_content {
+  width: 80%;
+  height: 100%;
+  font-size: 15px;
+}
+
+.text_content {
+  padding: 5px 0;
+}
+
+.detail_link_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.detail_link_box a {
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail_link_box a:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+.detail_close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+
+@media screen and (max-width: 1400px) {
+  .detail_text_name {
+    font-size: 13px;
+  }
+
+  .detail_text_content {
+    font-size: 13px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .portfolio_wrap-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio_detail_bg {
+    flex-direction: column;
+    height: 70%;
+  }
+
+  .portfolio_detail_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+  }
+
+  .portfolio_detail_image img {
+    width: 70%;
+    height: 90%;
+  }
+
+  .portfolio_detail_text {
+    width: 100%;
+    height: 60%;
+  }
+
+  .detail_text_box {
+    margin-top: 0%;
+    height: 75%;
+  }
+
+  .detail_text_name {
+    font-size: 14px;
+  }
+
+  .detail_text_content {
+    font-size: 14px;
   }
 }
 
@@ -639,6 +778,19 @@ ul {
 
   .portfolio_filters li {
     font-size: 16px;
+  }
+
+  .portfolio_detail_bg {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .detail_text_name {
+    font-size: 12.5px;
+  }
+
+  .detail_text_content {
+    font-size: 12.5px;
   }
 }
 

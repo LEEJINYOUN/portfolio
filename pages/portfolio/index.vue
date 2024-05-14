@@ -11,6 +11,9 @@ const moreModal = (item: PortfolioModel) => {
     component: LazyMoreCard,
     attrs: {
       portfolio: item,
+      onCancel() {
+        close();
+      },
     },
   });
   open();
@@ -37,16 +40,16 @@ const portfolioList = [
     category: "QA관리 툴",
     member: 5,
     tool: "webstorm",
-    skill: "nuxt js, typescript, tailwind css, php",
+    skill: "nuxt js, typescript, tailwind css, laravel",
     develop: "vercel",
     work: "API로 불러온 데이터를 활용하여 사용자 인터페이스 구성 및 개발",
     des: [
       "엑셀형태로 한눈에 테스트 실행 결과 확인 가능",
       "다수의 테스터가 실행한 결과를 빠르게 파악",
       "QA 항목별로 진행상황을 자세히 파악",
-      "slack, jira, github에 연동하여 QA 항목이 실패로 될때 마다 이슈 받기 가능",
+      "슬랙, 지라, 깃허브에 연동하여 QA 항목이 실패로 될 때마다 이슈 받기 가능",
       "아직 오픈한 지 얼마 되지 않아서 불안정함",
-      "안정화될때까지 1~2개월 소요 예상",
+      "안정화될 때까지 1~2개월 소요 예상",
     ],
     url: "https://swlsdud1005.sirv.com/portfolio/image/inspecter.png",
     github: "-",
@@ -104,12 +107,6 @@ const portfolioList = [
   <section class="portfolio section">
     <h2 class="section_title">- Portfolio -</h2>
     <div class="portfolio_container container">
-      <ul class="portfolio_filters">
-        <li data-filter="*" class="filter-active">All</li>
-        <li data-filter=".filter-next">Next Js</li>
-        <li data-filter=".filter-react">React</li>
-        <li data-filter=".filter-javascript">JavaScript</li>
-      </ul>
       <div class="portfolio_wrap-container">
         <div
           v-for="(item, key) in portfolioList"
