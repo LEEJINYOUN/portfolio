@@ -22,7 +22,7 @@ const moreModal = (item: PortfolioModel) => {
 const portfolioList = [
   {
     title: "개인 포트폴리오",
-    date: "2024.05.13 ~ 2024.05.16",
+    date: "2024.05.12 ~ 2024.05.15",
     category: "포트폴리오",
     member: 1,
     tool: "vscode",
@@ -32,7 +32,7 @@ const portfolioList = [
     des: ["포트폴리오 용도로 제작한 사이트"],
     url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.png",
     github: "https://github.com/LEEJINYOUN/portfolio",
-    page: "https://portfolio-e4eyzlyta-leejinyouns-projects.vercel.app/",
+    page: "https://portfolio-h1ai5sg9h-leejinyouns-project.vercel.app/",
   },
   {
     title: "인스펙터",
