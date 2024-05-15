@@ -30,7 +30,7 @@ const portfolioList = [
     develop: "vercel",
     work: "기획, 디자인, 사용자 인터페이스 구성 및 개발",
     des: ["포트폴리오 용도로 제작한 사이트"],
-    url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.jpg",
+    url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.png",
     github: "https://github.com/LEEJINYOUN/portfolio",
     page: "-",
   },
