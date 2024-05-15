@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const menu = [
+const menuList = [
   {
     link: "/resume",
     title: "Resume",
@@ -28,17 +28,17 @@ const closeToggle = () => {
 
 <template>
   <div class="header">
-    <div class="container">
+    <LayoutContainer>
       <NuxtLink to="/" class="logo"> jin young </NuxtLink>
       <ul class="menu" :class="isToggle == true ? 'active' : ''">
-        <li class="menu_item" v-for="(item, key) in menu" :key="key">
+        <li class="menu_item" v-for="(menu, key) in menuList" :key="key">
           <NuxtLink
-            :to="`${item.link}`"
+            :to="`${menu.link}`"
             class="menu_link"
-            :class="route.path == `${item.link}` ? 'active-link' : ''"
+            :class="route.path == `${menu.link}` ? 'active-link' : ''"
             @click="closeToggle"
           >
-            {{ item.title }}
+            {{ menu.title }}
           </NuxtLink>
         </li>
         <UIcon
@@ -52,7 +52,7 @@ const closeToggle = () => {
         class="toggle_icon"
         @click="iconToggle"
       />
-    </div>
+    </LayoutContainer>
   </div>
   <slot />
 </template>

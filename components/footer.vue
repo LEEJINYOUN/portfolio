@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="footer_bg">
-      <div class="footer_container container">
+      <LayoutContainer class="footer_container">
         <div class="main_footer">
           <div class="footer_social">
             <a href="https://github.com/LEEJINYOUN" target="_blank">
@@ -14,7 +14,7 @@
             &#169; 2024. Lee Jin Young. All right reserved
           </div>
         </div>
-      </div>
+      </LayoutContainer>
     </div>
   </footer>
 </template>

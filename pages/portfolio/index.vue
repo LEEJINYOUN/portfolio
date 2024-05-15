@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LazyMoreCard } from "#components";
+import { ModalPortfolioMore } from "#components";
 import { useModal } from "vue-final-modal";
 import type { PortfolioModel } from "~/model/portfolio";
 definePageMeta({
@@ -8,7 +8,7 @@ definePageMeta({
 
 const moreModal = (item: PortfolioModel) => {
   const { open, close } = useModal({
-    component: LazyMoreCard,
+    component: ModalPortfolioMore,
     attrs: {
       portfolio: item,
       onCancel() {
@@ -44,10 +44,10 @@ const portfolioList = [
     develop: "vercel",
     work: "API로 불러온 데이터를 활용하여 사용자 인터페이스 구성 및 개발",
     des: [
-      "엑셀형태로 한눈에 테스트 실행 결과 확인 가능",
+      "엑셀형태로 한눈에 테스트 실행 결과 확인",
       "다수의 테스터가 실행한 결과를 빠르게 파악",
       "QA 항목별로 진행상황을 자세히 파악",
-      "슬랙, 지라, 깃허브에 연동하여 QA 항목이 실패로 될 때마다 이슈 받기 가능",
+      "슬랙, 지라, 깃허브에 연동하여 QA 항목이 실패로 될 때마다 이슈 받기",
       "아직 오픈한 지 얼마 되지 않아서 불안정함",
       "안정화될 때까지 1~2개월 소요 예상",
     ],
@@ -104,9 +104,9 @@ const portfolioList = [
 ];
 </script>
 <template>
-  <section class="portfolio section">
-    <h2 class="section_title">- Portfolio -</h2>
-    <div class="portfolio_container container">
+  <LayoutSection class="portfolio">
+    <TextSectionTitle>- Portfolio -</TextSectionTitle>
+    <LayoutContainer class="portfolio_container">
       <div class="portfolio_wrap-container">
         <div
           v-for="(item, key) in portfolioList"
@@ -114,26 +114,22 @@ const portfolioList = [
           class="portfolio_item filter-next"
         >
           <div class="portfolio_wrap">
-            <img
-              :src="`${item.url}`"
-              alt="{{ item.title }}"
-              class="img-fluid"
-            />
+            <ImagePortfolioImage :title="item.title" :url="item.url" />
             <div class="portfolio_info">
               <h4>{{ item.title }}</h4>
               <p>{{ item.category }}</p>
               <div v-if="item.page != '-'" class="portfolio_links">
                 <a :href="item.page" target="_blank">
-                  <UIcon name="i-heroicons-link" class="link_icon"
-                /></a>
+                  <IconLink />
+                </a>
               </div>
-              <UButton color="black" variant="solid" @click="moreModal(item)"
-                >자세히</UButton
+              <ButtonPortfolioButton @click="moreModal(item)"
+                >자세히</ButtonPortfolioButton
               >
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </LayoutContainer>
+  </LayoutSection>
 </template>
