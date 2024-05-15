@@ -1,75 +1,19 @@
-# Nuxt 3 Minimal Starter
+# 포트폴리오
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<h2> 📃 개요 </h2>
 
-## Setup
+- <h3>포트폴리오 용도로 제작한 페이지</h3>
+  <br/><br/>
 
-Make sure to install the dependencies:
+<h2> 🛠 사용 기술 </h2>
 
-```bash
-# npm
-npm install
+- <h3>Nuxt Js</h3>
+- <h3>Typescript</h3>
+- <h3>Emailjs</h3>
+  <br/><br/>
 
-# pnpm
-pnpm install
+<h2> ⚙️ 구현 기능 </h2>
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- <h3>다양한 섹션으로 이동 기능</h3>
+- <h3>창 크기에 따른 반응형 웹사이트</h3>
+  <br/><br/>
