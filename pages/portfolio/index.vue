@@ -32,7 +32,7 @@ const portfolioList = [
     des: ["포트폴리오 용도로 제작한 사이트"],
     url: "https://swlsdud1005.sirv.com/portfolio/image/portfolio.png",
     github: "https://github.com/LEEJINYOUN/portfolio",
-    page: "-",
+    page: "https://portfolio-e4eyzlyta-leejinyouns-projects.vercel.app/",
   },
   {
     title: "인스펙터",
