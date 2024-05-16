@@ -40,7 +40,7 @@ const portfolioList = [
     category: "QA관리 툴",
     member: 5,
     tool: "webstorm",
-    skill: "nuxt js, typescript, tailwind css, laravel",
+    skill: "nuxt js, typescript, tailwind css, laravel, mysql",
     develop: "vercel",
     work: "API로 불러온 데이터를 활용하여 사용자 인터페이스 구성 및 개발",
     des: [
