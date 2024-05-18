@@ -9,17 +9,14 @@ const email = ref("");
 const phone = ref("");
 const message = ref("");
 
-const checkEmail = () => {
+const checkEmail = (value: string) => {
   let regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-  if (regEmail.test(email.value) == true) {
-    return true;
-  } else {
-    return false;
-  }
+  if (regEmail.test(value) === true) return true;
+  return alert("이메일 형식이 아닙니다. 다시 입력하세요.");
 };
 
 const sendEmail = () => {
-  if (checkEmail() == true) {
+  if (checkEmail(email.value)) {
     let params = {
       name: name.value,
       email: email.value,
@@ -45,8 +42,6 @@ const sendEmail = () => {
     } else {
       alert("빈칸이 있습니다. 전부 다 입력하세요.");
     }
-  } else {
-    alert("이메일 형식이 아닙니다. 다시 입력하세요.");
   }
 };
 
@@ -81,7 +76,7 @@ onMounted(() => {
           type="text"
           id="phone"
           required
-          oninput="javascript: this.value = this.value.replace(/[^0-9]/, '').replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);"
+          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
           placeholder="전화번호"
           v-model="phone"
         />
