@@ -9,31 +9,44 @@ const email = ref("");
 const phone = ref("");
 const message = ref("");
 
-const sendEmail = () => {
-  let params = {
-    name: name.value,
-    email: email.value,
-    phone: phone.value,
-    message: message.value,
-  };
-
-  if (
-    name.value != "" &&
-    email.value != "" &&
-    phone.value != "" &&
-    message.value != ""
-  ) {
-    emailjs
-      .send("service_p2kirpz", "template_a8tb4ge", params)
-      .then(function () {
-        alert("성공적으로 메세지를 전송했습니다.");
-        name.value = "";
-        email.value = "";
-        phone.value = "";
-        message.value = "";
-      });
+const checkEmail = () => {
+  let regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+  if (regEmail.test(email.value) == true) {
+    return true;
   } else {
-    alert("빈칸이 있습니다. 전부 다 입력하세요.");
+    return false;
+  }
+};
+
+const sendEmail = () => {
+  if (checkEmail() == true) {
+    let params = {
+      name: name.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value,
+    };
+
+    if (
+      name.value != "" &&
+      email.value != "" &&
+      phone.value != "" &&
+      message.value != ""
+    ) {
+      emailjs
+        .send("service_p2kirpz", "template_a8tb4ge", params)
+        .then(function () {
+          alert("성공적으로 메세지를 전송했습니다.");
+          name.value = "";
+          email.value = "";
+          phone.value = "";
+          message.value = "";
+        });
+    } else {
+      alert("빈칸이 있습니다. 전부 다 입력하세요.");
+    }
+  } else {
+    alert("이메일 형식이 아닙니다. 다시 입력하세요.");
   }
 };
 
@@ -68,6 +81,7 @@ onMounted(() => {
           type="text"
           id="phone"
           required
+          oninput="javascript: this.value = this.value.replace(/[^0-9]/, '').replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);"
           placeholder="전화번호"
           v-model="phone"
         />
