@@ -40,6 +40,18 @@ const skillList = [
     title: "GITHUB",
     per: 35,
   },
+  {
+    title: "LARAVEL",
+    per: 10,
+  },
+  {
+    title: "MYSQL",
+    per: 10,
+  },
+  {
+    title: "NODE JS",
+    per: 10,
+  },
 ];
 </script>
 
