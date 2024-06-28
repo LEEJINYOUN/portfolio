@@ -120,14 +120,14 @@ const portfolioList = [
             :key="key"
             class="relative overflow-hidden z-10 h-[250px] rounded-lg"
           >
-            <div class="portfolio_wrap w-full h-full">
+            <div class="portfolioWrap w-full h-full">
               <img
                 :src="`${item.url}`"
                 alt="{{ item.title }}"
                 class="w-full h-full rounded-lg"
               />
               <div
-                class="portfolio_info hover:scale-100 absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col gap-y-6 bg-[#ffffff86] scale-[0.001] duration-500 text-[#333]"
+                class="portfolioInfo hover:scale-100 absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col gap-y-6 bg-[#ffffff86] scale-[0.001] duration-500 text-[#333]"
               >
                 <h4 class="text-[24px] text-[#333] font-semibold">
                   {{ item.title }}
