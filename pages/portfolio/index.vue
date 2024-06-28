@@ -104,7 +104,39 @@ const portfolioList = [
 ];
 </script>
 <template>
-  <LayoutSection class="portfolio">
+  <section class="section">
+    <div class="container mx-auto h-full relative">
+      <div
+        class="flex flex-col lg:flex-row h-full items-center justify-start gap-x-24 text-center lg:text-left pt-24 lg-pt36 pb-8"
+      >
+        <div class="flex flex-col lg:items-start">
+          <h1 class="h1">포트폴리오</h1>
+          <p class="mb-12 max-w-sm">
+            dsadsadasdsa
+            <b>dasdada</b>dsadsadasdsa
+            <br />
+            <br />
+            dsadsadasdsa
+            <b>dasdada</b>dsadsadasdsa
+          </p>
+        </div>
+        <div class="grid grid-cols-2 lg:gap-2">
+          <div
+            v-for="(item, key) in portfolioList"
+            :key="key"
+            class="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden"
+          >
+            <img
+              src="https://swlsdud1005.sirv.com/portfolio/image/weather.gif"
+              alt=""
+              class="object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <LayoutSection class="portfolio">
     <TextSectionTitle>- Portfolio -</TextSectionTitle>
     <LayoutContainer class="portfolio_container">
       <div class="portfolio_wrap-container">
@@ -131,5 +163,5 @@ const portfolioList = [
         </div>
       </div>
     </LayoutContainer>
-  </LayoutSection>
+  </LayoutSection> -->
 </template>
