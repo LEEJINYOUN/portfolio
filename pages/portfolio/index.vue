@@ -104,48 +104,42 @@ const portfolioList = [
 ];
 </script>
 <template>
-  <section class="section">
-    <div class="w-full relative z-10 h-full overflow-y-scroll">
-      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-14">
-        <h1
-          class="text-center text-[36px] font-semibold uppercase relative py-[20px] mb-5"
-        >
-          - portfolio -
-        </h1>
+  <LazyLayoutSectionLayout>
+    <LazyLayoutContainerLayout>
+      <LazyTextSectionTitle>- portfolio -</LazyTextSectionTitle>
+      <div
+        class="w-5/6 sm:w-4/6 md:w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
+      >
         <div
-          class="w-5/6 sm:w-4/6 md:w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
+          v-for="(item, key) in portfolioList"
+          :key="key"
+          class="relative overflow-hidden z-10 h-[250px] rounded-lg"
         >
-          <div
-            v-for="(item, key) in portfolioList"
-            :key="key"
-            class="relative overflow-hidden z-10 h-[250px] rounded-lg"
-          >
-            <div class="portfolioWrap w-full h-full">
-              <img
-                :src="`${item.url}`"
-                alt="{{ item.title }}"
-                class="w-full h-full rounded-lg"
-              />
-              <div
-                class="portfolioInfo hover:scale-100 absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col gap-y-6 bg-[#ffffff86] scale-[0.001] duration-500 text-[#333]"
-              >
-                <h4 class="text-[24px] text-[#333] font-semibold">
-                  {{ item.title }}
-                </h4>
-                <p class="font-normal">{{ item.category }}</p>
-                <div v-if="item.page != '-'">
-                  <a :href="item.page" target="_blank">
-                    <IconLink />
-                  </a>
-                </div>
-                <ButtonPortfolioButton @click="moreModal(item)"
-                  >자세히</ButtonPortfolioButton
-                >
+          <div class="portfolioWrap w-full h-full">
+            <img
+              :src="`${item.url}`"
+              alt="{{ item.title }}"
+              class="w-full h-full rounded-lg"
+            />
+            <div
+              class="portfolioInfo hover:scale-100 absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col gap-y-6 bg-[#ffffff86] scale-[0.001] duration-500 text-[#333]"
+            >
+              <h4 class="text-[24px] text-[#333] font-semibold">
+                {{ item.title }}
+              </h4>
+              <p class="font-normal">{{ item.category }}</p>
+              <div v-if="item.page != '-'">
+                <a :href="item.page" target="_blank">
+                  <IconLink />
+                </a>
               </div>
+              <ButtonPortfolioButton @click="moreModal(item)"
+                >자세히</ButtonPortfolioButton
+              >
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </LazyLayoutContainerLayout>
+  </LazyLayoutSectionLayout>
 </template>
