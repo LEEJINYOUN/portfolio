@@ -36,7 +36,7 @@ const closeToggle = () => {
     >
       <NuxtLink
         to="/"
-        class="max-x-[200px] uppercase tracking-widest font-black text-3xl"
+        class="max-w-[200px] uppercase tracking-widest font-black text-3xl"
       >
         jin young
       </NuxtLink>

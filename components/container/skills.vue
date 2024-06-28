@@ -1,63 +1,68 @@
 <script setup lang="ts">
-const skillList = [
+const fontSkillList = [
   {
-    title: "HTML",
-    per: 50,
+    title: "html",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/html.svg",
   },
   {
-    title: "CSS",
-    per: 50,
+    title: "css",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/css.svg",
   },
   {
-    title: "JAVASCRIPT",
-    per: 50,
+    title: "javascript",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/javascript.svg",
   },
   {
-    title: "TYPESCRIPT",
-    per: 30,
+    title: "typescript",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/typescript.svg",
   },
   {
-    title: "REACT",
-    per: 40,
+    title: "react js",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/react.svg",
   },
   {
-    title: "NEXT JS",
-    per: 15,
+    title: "next js",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/next.svg",
   },
   {
-    title: "VUE",
-    per: 40,
+    title: "vue js",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/vue.svg",
   },
   {
-    title: "NUXT JS",
-    per: 35,
+    title: "nuxt js",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/front/nuxt.svg",
+  },
+];
+
+const backSkillList = [
+  {
+    title: "laravel",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/back/laravel.svg",
   },
   {
-    title: "GIT",
-    per: 35,
+    title: "mysql",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/back/mysql.svg",
   },
   {
-    title: "GITHUB",
-    per: 35,
+    title: "node js",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/back/node.svg",
+  },
+];
+const etcSkillList = [
+  {
+    title: "git",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/etc/git.svg",
   },
   {
-    title: "LARAVEL",
-    per: 10,
-  },
-  {
-    title: "MYSQL",
-    per: 10,
-  },
-  {
-    title: "NODE JS",
-    per: 10,
+    title: "github",
+    url: "https://swlsdud1005.sirv.com/portfolio/svg/etc/github.svg",
   },
 ];
 </script>
 
 <template>
   <LayoutPage class="two">
-    <TextPageHeading>Skills</TextPageHeading>
+    <!-- <TextPageHeading>Skills</TextPageHeading>
     <div class="progressBoxs grid">
       <div v-for="(item, key) in skillList" :key="key" class="progressBox">
         <div class="progress_name">
@@ -68,6 +73,6 @@ const skillList = [
           <div class="progress_bar" :style="`width:${item.per}%`" />
         </div>
       </div>
-    </div>
+    </div> -->
   </LayoutPage>
 </template>

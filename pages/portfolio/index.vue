@@ -105,34 +105,14 @@ const portfolioList = [
 </script>
 <template>
   <section class="section">
-    <div class="container mx-auto h-full relative">
-      <div
-        class="flex flex-col lg:flex-row h-full items-center justify-start gap-x-24 text-center lg:text-left pt-24 lg-pt36 pb-8"
-      >
-        <div class="flex flex-col lg:items-start">
-          <h1 class="h1">포트폴리오</h1>
-          <p class="mb-12 max-w-sm">
-            dsadsadasdsa
-            <b>dasdada</b>dsadsadasdsa
-            <br />
-            <br />
-            dsadsadasdsa
-            <b>dasdada</b>dsadsadasdsa
-          </p>
-        </div>
-        <div class="grid grid-cols-2 lg:gap-2">
-          <div
-            v-for="(item, key) in portfolioList"
-            :key="key"
-            class="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden"
-          >
-            <img
-              src="https://swlsdud1005.sirv.com/portfolio/image/weather.gif"
-              alt=""
-              class="object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500"
-            />
-          </div>
-        </div>
+    <div class="w-full relative z-10 h-full overflow-y-scroll">
+      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-14">
+        <h1
+          class="text-center text-[36px] font-semibold uppercase relative py-[20px] mb-5"
+        >
+          - portfolio -
+        </h1>
+        <div>dasd</div>
       </div>
     </div>
   </section>
