@@ -94,15 +94,6 @@
   }
 }
 
-@media screen and (max-width: 576px) {
-  .home_container {
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
-    justify-content: center;
-  }
-
-  .home_content {
-    order: 2;
-    text-align: center;
-  }
+.portfolio_wrap:hover .portfolio_info {
+  transform: scale(1.1);
 }

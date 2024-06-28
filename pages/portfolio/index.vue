@@ -112,36 +112,40 @@ const portfolioList = [
         >
           - portfolio -
         </h1>
-        <div>dasd</div>
-      </div>
-    </div>
-  </section>
-  <!-- <LayoutSection class="portfolio">
-    <TextSectionTitle>- Portfolio -</TextSectionTitle>
-    <LayoutContainer class="portfolio_container">
-      <div class="portfolio_wrap-container">
         <div
-          v-for="(item, key) in portfolioList"
-          :key="key"
-          class="portfolio_item filter-next"
+          class="w-5/6 sm:w-4/6 md:w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
         >
-          <div class="portfolio_wrap">
-            <ImagePortfolioImage :title="item.title" :url="item.url" />
-            <div class="portfolio_info">
-              <h4>{{ item.title }}</h4>
-              <p>{{ item.category }}</p>
-              <div v-if="item.page != '-'" class="portfolio_links">
-                <a :href="item.page" target="_blank">
-                  <IconLink />
-                </a>
-              </div>
-              <ButtonPortfolioButton @click="moreModal(item)"
-                >자세히</ButtonPortfolioButton
+          <div
+            v-for="(item, key) in portfolioList"
+            :key="key"
+            class="relative overflow-hidden z-10 h-[250px] rounded-lg"
+          >
+            <div class="portfolio_wrap w-full h-full">
+              <img
+                :src="`${item.url}`"
+                alt="{{ item.title }}"
+                class="w-full h-full rounded-lg"
+              />
+              <div
+                class="portfolio_info hover:scale-100 absolute top-0 left-0 w-full h-full flex items-center justify-center flex-col gap-y-6 bg-[#ffffff86] scale-[0.001] duration-500 text-[#333]"
               >
+                <h4 class="text-[24px] text-[#333] font-semibold">
+                  {{ item.title }}
+                </h4>
+                <p class="font-normal">{{ item.category }}</p>
+                <div v-if="item.page != '-'">
+                  <a :href="item.page" target="_blank">
+                    <IconLink />
+                  </a>
+                </div>
+                <ButtonPortfolioButton @click="moreModal(item)"
+                  >자세히</ButtonPortfolioButton
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </LayoutContainer>
-  </LayoutSection> -->
+    </div>
+  </section>
 </template>
