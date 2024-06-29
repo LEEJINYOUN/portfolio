@@ -4,14 +4,14 @@ definePageMeta({
 });
 </script>
 <template>
-  <LayoutSection class="resume">
-    <TextSectionTitle>- Resume -</TextSectionTitle>
-    <LayoutContainer class="resume_container grid">
-      <div class="resume_tabs"></div>
-      <div class="resume_content">
-        <ContainerTimeLine />
-        <ContainerSkills />
-      </div>
-    </LayoutContainer>
-  </LayoutSection>
+  <LazyLayoutSectionLayout>
+    <LazyLayoutContainerLayout>
+      <LazyTextSectionTitle>- timeline -</LazyTextSectionTitle>
+      <LazyContainerTimeline />
+    </LazyLayoutContainerLayout>
+    <LazyLayoutContainerLayout>
+      <LazyTextSectionTitle>- skills -</LazyTextSectionTitle>
+      <LazyContainerSkills />
+    </LazyLayoutContainerLayout>
+  </LazyLayoutSectionLayout>
 </template>
