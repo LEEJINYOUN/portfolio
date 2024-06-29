@@ -93,7 +93,7 @@ onMounted(() => {
         <div class="mb-6">
           <LazyTextInputLabel for="message" title="메세지" />
           <LazyFormTextareaItem
-            id="content"
+            id="message"
             :value="message"
             @update:textareaValue="($event) => (message = $event.target.value)"
           />
