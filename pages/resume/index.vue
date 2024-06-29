@@ -7,6 +7,8 @@ definePageMeta({
   <LazyLayoutSectionLayout>
     <LazyLayoutContainerLayout>
       <LazyTextSectionTitle>- timeline -</LazyTextSectionTitle>
+      <ContainerTimeline />
+      ----
       <LazyContainerTimeline />
     </LazyLayoutContainerLayout>
     <LazyLayoutContainerLayout>
