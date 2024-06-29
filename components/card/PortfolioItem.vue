@@ -128,8 +128,6 @@ const portfolioList = [
         <LazyButtonBlackButton @click="moreModal(item)">
           자세히
         </LazyButtonBlackButton>
-
-        >
       </div>
     </div>
   </div>
