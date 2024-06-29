@@ -4,6 +4,11 @@ definePageMeta({
   layout: "navbar",
 });
 
+const emailSendService = useRuntimeConfig().public.emailSendService as string;
+const emailSendTemplate = useRuntimeConfig().public.emailSendTemplate as string;
+const emailSendPublicKey = useRuntimeConfig().public
+  .emailSendPublicKey as string;
+
 const name = ref("");
 const email = ref("");
 const phone = ref("");
@@ -23,7 +28,6 @@ const sendEmail = () => {
       phone: phone.value,
       message: message.value,
     };
-
     if (
       name.value != "" &&
       email.value != "" &&
@@ -31,7 +35,7 @@ const sendEmail = () => {
       message.value != ""
     ) {
       emailjs
-        .send("service_p2kirpz", "template_a8tb4ge", params)
+        .send(emailSendService, emailSendTemplate, params)
         .then(function () {
           alert("성공적으로 메세지를 전송했습니다.");
           name.value = "";
@@ -47,7 +51,7 @@ const sendEmail = () => {
 
 onMounted(() => {
   emailjs.init({
-    publicKey: "vfqvlxV8xTOV1wE3N",
+    publicKey: emailSendPublicKey,
   });
 });
 </script>
@@ -58,74 +62,43 @@ onMounted(() => {
       <form class="flex flex-col gap-10 w-3/4 lg:w-4/5 xl:w-2/3 m-auto">
         <div class="grid gap-10 mb-6 md:grid-cols-3">
           <div>
-            <label
-              for="first_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >이름</label
-            >
-            <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            <LazyTextInputLabel for="name" title="이름" />
+            <LazyFormInputItem
               type="text"
               id="name"
-              required
-              placeholder="이름"
-              v-model="name"
+              :value="name"
+              @update:inputValue="($event) => (name = $event.target.value)"
             />
           </div>
           <div>
-            <label
-              for="last_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >이메일</label
-            >
-            <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            <LazyTextInputLabel for="email" title="이메일" />
+            <LazyFormInputItem
               type="email"
               id="email"
-              required
-              placeholder="이메일"
-              v-model="email"
+              :value="email"
+              @update:inputValue="($event) => (email = $event.target.value)"
             />
           </div>
           <div>
-            <label
-              for="company"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >전화번호</label
-            >
-            <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            <LazyTextInputLabel for="phone" title="전화번호" />
+            <LazyFormInputItem
               type="text"
               id="phone"
-              required
+              :value="phone"
               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-              placeholder="전화번호"
-              v-model="phone"
+              @update:inputValue="($event) => (phone = $event.target.value)"
             />
           </div>
         </div>
         <div class="mb-6">
-          <label
-            for="message"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >메세지</label
-          >
-          <textarea
-            id="message"
-            rows="4"
-            cols="30"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
-            required
-            placeholder="전하고 싶은 메세지"
-            v-model="message"
-          ></textarea>
+          <LazyTextInputLabel for="message" title="메세지" />
+          <LazyFormTextareaItem
+            id="content"
+            :value="message"
+            @update:textareaValue="($event) => (message = $event.target.value)"
+          />
         </div>
-        <button
-          class="btn mb-[30px] mx-auto lg:mx-0 self-start"
-          @click="sendEmail"
-        >
-          보내기
-        </button>
+        <LazyButtonBlueButton @click="sendEmail">보내기</LazyButtonBlueButton>
       </form>
     </LazyLayoutContainerLayout>
     <LazyUiFooter

@@ -97,9 +97,9 @@ const emit = defineEmits<{
           /></a>
         </div>
         <div class="flex justify-center items-center w-full h-[10%]">
-          <ButtonPortfolioButton @click="emit('cancel')"
-            >닫기</ButtonPortfolioButton
-          >
+          <LazyButtonBlackButton @click="emit('cancel')">
+            닫기
+          </LazyButtonBlackButton>
         </div>
       </div>
     </div>

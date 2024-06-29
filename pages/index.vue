@@ -2,6 +2,12 @@
 definePageMeta({
   layout: "navbar",
 });
+
+const test = () => {
+  console.log(123);
+
+  navigateTo("/resume");
+};
 </script>
 
 <template>
@@ -24,7 +30,7 @@ definePageMeta({
           </h1>
           <NuxtLink
             to="/resume"
-            class="btn mt-[30px] inline-block items-center w-auto text-[20px]"
+            class="bg-slate-500/80 hover:bg-slate-600 text-white duration-150 mt-[30px] p-5 inline-block items-center w-auto text-xl rounded-md"
           >
             더 알아보기 <span></span
           ></NuxtLink>
